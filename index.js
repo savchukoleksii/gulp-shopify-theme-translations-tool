@@ -32,7 +32,7 @@ module.exports = () => {
             .replace(new RegExp(/"{{/gm), "{{")
             .replace(new RegExp(/}}"/gm), "}}");
 
-        const content = `{%- comment -%}\n\tAuto-generated file. Dont change!\n{%- endcomment -%}\n{%- layout none -%}{%- capture content -%}{{- content_for_index -}}{%- endcapture -%}{%- capture translations -%}${json}{%- endcapture -%}{{- translations -}}`;
+        const content = `{%- comment -%}\n\tAuto-generated file. Dont change!\n{%- endcomment -%}\n{%- capture translations -%}${json}{%- endcapture -%}{{- translations -}}`;
 
         file.contents = Buffer.from(content, 'utf-8');
 
